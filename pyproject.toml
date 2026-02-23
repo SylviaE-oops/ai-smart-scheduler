@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "ai-smart-scheduler"
+version = "0.1.0"
+description = "AI-powered scheduling assistant that generates personalized daily schedules based on user priorities, personality traits, constraints, and historical behavior."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+    "openai>=1.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+ai-smart-scheduler = "ai_smart_scheduler.main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
